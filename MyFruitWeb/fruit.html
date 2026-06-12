@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>随机水果图片</title>
+    <style>
+        body { text-align: center; font-family: sans-serif; margin-top: 50px; }
+        img { border: 5px solid #ddd; border-radius: 10px; max-width: 80%; }
+    </style>
+</head>
+<body>
+
+    <h1>我的随机水果生成器</h1>
+
+    <!-- 这里是显示图片的地方 -->
+    <img id="myImage" src="images/1.jpg" alt="图片正在加载..." style="width:300px">
+
+    <br><br>
+    <button onclick="changeImage()" style="padding: 10px 20px; font-size: 16px;">换一张图片</button>
+
+    <script>
+        // 这里是 JavaScript 逻辑
+        function changeImage() {
+            var image = document.getElementById('myImage');
+
+            // 生成一个 1 到 5 之间的随机数
+            // 如果你有 5 张图片，就把数字 5 改成你的图片总数
+            var randomNum = Math.floor(Math.random() * 4) + 1;
+
+            // 拼接新的路径，例如 "images/3.jpg"
+            image.src = "images/" + randomNum + ".jpg";
+
+            // 在控制台打印一下，方便调试
+            console.log("正在尝试加载图片: " + image.src);
+        }
+    </script>
+
+</body>
+</html>
